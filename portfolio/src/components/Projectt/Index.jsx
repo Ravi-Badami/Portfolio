@@ -4,7 +4,7 @@ const Project = () => {
   return (
     <div className=' w-screen mt-10 text-center h-'>
       <section className='text-gray-600 body-font '>
-        <div className=' px-5 py-24 mx-auto flex flex-col gap-3'>
+        <div className=' px-5 py-24 mx-auto flex  flex-col gap-3'>
           <SwiggyClone Project={swiggy} name={'Tajbite'} />
           {/* <SwiggyClone Project={swiggy} name={'Ethonest'} /> */}
         </div>
