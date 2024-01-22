@@ -53,7 +53,7 @@
 #prompt {
   bottom: 8px;
   left: 12px;
-  z-index: 20;
+  /* z-index: 20; */
   font-size: 20px;
   font-weight: bold;
   transition: 300ms ease-in-out-out;
@@ -91,7 +91,7 @@
 .canvas {
   perspective: 800px;
   inset: 0;
-  z-index: 200;
+  /* z-index: 200; */
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

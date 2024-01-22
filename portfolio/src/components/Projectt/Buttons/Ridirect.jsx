@@ -7,8 +7,8 @@ const Ridirect = () => {
         viewBox='0 0 24 30'
         fill='#F0F0F0'
         x='0px'
-        width='40px'
-        height='40px'
+        width='37px'
+        height='37px'
         y='0px'>
         <defs>
           <style>

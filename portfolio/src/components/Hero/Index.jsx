@@ -3,7 +3,9 @@ import RightHero from './RightHero';
 
 const Hero = () => {
   return (
-    <div className='md:h-[100%] py-10  md:py-0  w-screen flex  justify-center borde border-black'>
+    <div
+      id='about'
+      className='md:h-[100%] py-10  md:py-0 md:mt-20  w-[90%] flex  justify-center borde border-black bg-sky-200 rounded-xl '>
       <div className=' h-[40%] md:h-[80%] borderr flex justify-center items-center borderr-black w-full'>
         <LeftHero />
         <RightHero />

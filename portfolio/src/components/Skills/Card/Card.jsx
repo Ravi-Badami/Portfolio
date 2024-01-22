@@ -1,5 +1,5 @@
 import '../index.css';
-const Skills = ({ js }) => {
+const Skills = ({ js, skill }) => {
   return (
     <div className='container noselect  '>
       <div className='canvas'>
@@ -31,6 +31,9 @@ const Skills = ({ js }) => {
         <div id='card'>
           <div className='title'>
             <img src={js} alt='' className='h-28 ' />
+            <div className='w-full flex justify-center'>
+              <p className='mt-5'>{skill}</p>
+            </div>
           </div>
         </div>
       </div>

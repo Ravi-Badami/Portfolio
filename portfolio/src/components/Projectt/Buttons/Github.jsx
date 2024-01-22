@@ -3,7 +3,7 @@ const Github = () => {
     <div>
       <svg
         width='40px'
-        height='40px'
+        height='55px'
         viewBox='0 0 20 20'
         version='1.1'
         fill='#f0f0f0'

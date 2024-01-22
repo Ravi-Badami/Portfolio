@@ -13,22 +13,22 @@ const Skills = () => {
       </div>
       <div className='flex gap-5  md:gap-10 h-auto justify-center  flex-wrap '>
         <div className='md:w-[40%] h-[50%] w-[100%]'>
-          <Card js={js} />
+          <Card js={js} skill={'JavaScript'} />
         </div>
         <div className='md:w-[40%]  w-[100%]'>
-          <Card js={html} />
+          <Card js={html} skill={'HTML'} />
         </div>
         <div className='md:w-[40%]  w-[100%]'>
-          <Card js={css} />
+          <Card js={css} skill={'CSS'} />
         </div>
         <div className='md:w-[40%]  w-[100%]'>
-          <Card js={react} />
+          <Card js={react} skill={'React'} />
         </div>
         <div className='md:w-[40%]  w-[100%]'>
-          <Card js={redux} />
+          <Card js={redux} skill={'Redux'} />
         </div>
         <div className='md:w-[40%]  w-[100%]'>
-          <Card js={tailwind} />
+          <Card js={tailwind} skill={'Tailwind'} />
         </div>
       </div>
     </div>

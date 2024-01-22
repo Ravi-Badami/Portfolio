@@ -45,7 +45,7 @@ const Settings = () => {
         </svg>
       </div>
       <span className='absolute -top-8 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium shadow-md transition-all duration-300 ease-in-out group-hover:scale-100'>
-        Settings
+        Projects
       </span>
     </div>
   );
