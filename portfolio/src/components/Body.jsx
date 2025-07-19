@@ -3,6 +3,7 @@ import Header from './Header/Index';
 import Hero from './Hero/Index';
 import Project from './Projectt/Index';
 import Skills from './Skills/Index';
+import About from './About/Index';
 
 const Body = () => {
   return (
@@ -10,6 +11,7 @@ const Body = () => {
       <Header />
       <main className='w-full max-w-7xl mx-auto px-4'>
         <Hero />
+        <About />
         <Skills />
         <Project />
         <Contact />

@@ -1,34 +1,85 @@
 import profilePic from '../../../public/image/profile.png';
 
 const RightHero = () => {
+  const techStack = [
+    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-blue-600' },
+    { name: 'Node.js', icon: '🟢', color: 'from-green-400 to-green-600' },
+    { name: 'TypeScript', icon: '📘', color: 'from-blue-600 to-indigo-600' },
+    { name: 'AWS', icon: '☁️', color: 'from-orange-400 to-orange-600' },
+    { name: 'MongoDB', icon: '🍃', color: 'from-green-500 to-emerald-600' },
+    { name: 'Docker', icon: '🐳', color: 'from-blue-500 to-cyan-600' }
+  ];
+
   return (
-    <div className='w-full lg:w-1/2 flex justify-center items-center'>
+    <div className='w-full lg:w-1/2 flex justify-center items-center relative'>
       <div className='relative opacity-0 animate-slideInRight'>
-        {/* Animated background elements */}
-        <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20 animate-float'></div>
-        <div className='absolute -top-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-r from-pink-400 to-red-400 rounded-full blur-xl opacity-30 animate-float' style={{animationDelay: '0.5s'}}></div>
-        <div className='absolute -bottom-4 -left-4 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur-xl opacity-30 animate-float' style={{animationDelay: '1s'}}></div>
+        {/* Animated background grid */}
+        <div className='absolute inset-0 w-96 h-96 opacity-10'>
+          <div className='absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl transform rotate-6 animate-pulse'></div>
+          <div className='absolute inset-4 bg-gradient-to-l from-cyan-400 via-blue-500 to-purple-600 rounded-3xl transform -rotate-6 animate-pulse' style={{animationDelay: '1s'}}></div>
+        </div>
         
-        {/* Profile image */}
+        {/* Central profile area */}
         <div className='relative z-10 group'>
-          <div className='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500'></div>
-          <img 
-            src={profilePic} 
-            alt='Ravikumar Badami - Full Stack Developer' 
-            className='rounded-full w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover border-4 border-white shadow-2xl transition-transform duration-500 group-hover:scale-105'
-          />
+          {/* Glowing backdrop */}
+          <div className='absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-2xl opacity-30 animate-pulse group-hover:opacity-50 transition-all duration-700'></div>
           
-          {/* Floating tech icons */}
-          <div className='absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-white rounded-full p-2 md:p-3 shadow-lg animate-float'>
-            <svg className="w-4 h-4 md:w-6 md:h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-            </svg>
+          {/* Profile image with enhanced styling */}
+          <div className='relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-1 rounded-full'>
+            <img 
+              src={profilePic} 
+              alt='Ravikumar Badami - Senior Full Stack Developer' 
+              className='rounded-full w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover bg-white transition-all duration-700 group-hover:scale-105 group-hover:rotate-2'
+            />
           </div>
           
-          <div className='absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white rounded-full p-2 md:p-3 shadow-lg animate-float' style={{animationDelay: '1s'}}>
-            <svg className="w-4 h-4 md:w-6 md:h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-            </svg>
+          {/* Professional badges */}
+          <div className='absolute -top-6 -right-6 bg-white rounded-2xl px-4 py-2 shadow-2xl animate-float border border-gray-100'>
+            <div className='text-2xl mb-1'>🚀</div>
+            <div className='text-xs font-bold text-gray-800'>Senior Dev</div>
+          </div>
+          
+          <div className='absolute -bottom-6 -left-6 bg-white rounded-2xl px-4 py-2 shadow-2xl animate-float border border-gray-100' style={{animationDelay: '1s'}}>
+            <div className='text-2xl mb-1'>💼</div>
+            <div className='text-xs font-bold text-gray-800'>Available</div>
+          </div>
+        </div>
+        
+        {/* Floating tech stack indicators */}
+        {techStack.map((tech, index) => {
+          const positions = [
+            { top: '10%', right: '15%' },
+            { top: '25%', left: '10%' },
+            { bottom: '35%', right: '5%' },
+            { bottom: '15%', left: '15%' },
+            { top: '50%', right: '-10%' },
+            { top: '35%', left: '-5%' }
+          ];
+          
+          return (
+            <div
+              key={tech.name}
+              className={`absolute z-20 bg-white rounded-xl p-3 shadow-xl border border-gray-100 transform hover:scale-110 transition-all duration-300 animate-float group`}
+              style={{
+                ...positions[index],
+                animationDelay: `${index * 0.5}s`
+              }}
+            >
+              <div className={`w-12 h-12 bg-gradient-to-r ${tech.color} rounded-lg flex items-center justify-center text-white text-xl mb-2 group-hover:rotate-12 transition-transform duration-300`}>
+                {tech.icon}
+              </div>
+              <div className='text-xs font-bold text-gray-800 text-center'>{tech.name}</div>
+            </div>
+          );
+        })}
+        
+        {/* Achievement indicators */}
+        <div className='absolute top-1/2 -right-20 transform -translate-y-1/2 space-y-4'>
+          <div className='bg-gradient-to-r from-green-400 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce'>
+            ✅ Available
+          </div>
+          <div className='bg-gradient-to-r from-blue-400 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce' style={{animationDelay: '0.5s'}}>
+            🎯 Remote Ready
           </div>
         </div>
       </div>
