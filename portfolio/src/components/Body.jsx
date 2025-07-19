@@ -6,12 +6,18 @@ import Skills from './Skills/Index';
 
 const Body = () => {
   return (
-    <div className='p-4 flex flex-col items-center overflow-x-hidden '>
+    <div className='flex flex-col items-center overflow-x-hidden min-h-screen bg-gradient-to-b from-gray-50 to-white'>
       <Header />
-      <Hero />
-      <Skills />
-      <Project />
-      <Contact />
+      <main className='w-full max-w-7xl mx-auto px-4'>
+        <Hero />
+        <Skills />
+        <Project />
+        <Contact />
+      </main>
+      <footer className='w-full bg-gray-900 text-white text-center py-8 mt-20'>
+        <p>&copy; 2024 Ravikumar Badami. All rights reserved.</p>
+        <p className='text-sm text-gray-400 mt-2'>Built with React, Vite & Tailwind CSS</p>
+      </footer>
     </div>
   );
 };

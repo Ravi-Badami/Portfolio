@@ -3,21 +3,19 @@ import RightHero from './RightHero';
 
 const Hero = () => {
   return (
-    <div
+    <section
       id='about'
-      className='md:h-[100%] py-10  md:py-0 md:mt-20  w-[90%] flex  justify-center borde border-black bg-sky-200 rounded-xl '>
-      <div className=' h-[40%] md:h-[80%] borderr flex justify-center items-center borderr-black w-full'>
-        <LeftHero />
-        <RightHero />
+      className='min-h-screen flex items-center justify-center py-10 md:py-0 w-full mt-16 md:mt-20'>
+      <div className='w-full max-w-7xl mx-auto px-4'>
+        <div className='bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-xl p-6 md:p-12'>
+          <div className='flex flex-col lg:flex-row items-center justify-between min-h-[60vh] lg:min-h-[70vh]'>
+            <LeftHero />
+            <RightHero />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Hero;
-{
-  /* <div className='borderr-2 shadow-xl shadow-gray-400 borderr-black w-[95%] md:w-[80%] mt-2 rounded-3xl md:h-[80%] flex items-center justify-center'>
-        <div className='left'></div>
-        <div className='right'></div>
-      </div> */
-}

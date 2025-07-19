@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import '../index.css';
-const Skills = ({ js, skill }) => {
+
+const Card = ({ js, skill }) => {
   return (
-    <div className='container noselect  '>
+    <div className='container noselect'>
       <div className='canvas'>
         <div className='tracker tr-1'></div>
         <div className='tracker tr-2'></div>
@@ -30,9 +32,9 @@ const Skills = ({ js, skill }) => {
         <div className='tracker tr-25'></div>
         <div id='card'>
           <div className='title'>
-            <img src={js} alt='' className='h-28 ' />
+            <img src={js} alt={`${skill} technology icon`} className='h-28' />
             <div className='w-full flex justify-center'>
-              <p className='mt-5'>{skill}</p>
+              <p className='mt-5 font-semibold text-lg'>{skill}</p>
             </div>
           </div>
         </div>
@@ -41,4 +43,9 @@ const Skills = ({ js, skill }) => {
   );
 };
 
-export default Skills;
+Card.propTypes = {
+  js: PropTypes.string.isRequired,
+  skill: PropTypes.string.isRequired,
+};
+
+export default Card;
