@@ -1,7 +1,4 @@
 import { useState, useEffect } from 'react';
-import Message from './components/Message';
-import Settings from './components/Settings';
-import User from './components/User';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,15 +6,15 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'about', label: 'About', icon: User },
-    { id: 'skills', label: 'Skills', icon: Settings },
-    { id: 'project', label: 'Projects', icon: Settings },
-    { id: 'messages', label: 'Contact', icon: Message }
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'project', label: 'Work' },
+    { id: 'messages', label: 'Contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
       
       // Update active section based on scroll position
       const sections = navigationItems.map(item => item.id);
@@ -25,7 +22,7 @@ const Header = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          return rect.top <= 150 && rect.bottom >= 150;
         }
         return false;
       });
@@ -52,68 +49,56 @@ const Header = () => {
   
   return (
     <>
-      {/* Skip Navigation Link for Accessibility */}
-      <a 
-        href="#about" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-[70]"
-      >
-        Skip to main content
-      </a>
-      
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-200' 
+          ? 'bg-white/90 backdrop-blur-lg border-b border-gray-200' 
           : 'bg-transparent'
       }`}>
-        <nav className='w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16' role="navigation" aria-label="Main navigation">
-          <div className='flex items-center justify-between h-16 md:h-20'>
+        <nav className='container mx-auto'>
+          <div className='flex items-center justify-between h-20'>
+            
             {/* Logo */}
-            <div className='flex items-center'>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className='flex items-center gap-2 sm:gap-3 group'
-              >
-                <div className='w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl group-hover:scale-110 transition-transform duration-300'>
-                  RB
-                </div>
-                <div className='hidden sm:block'>
-                  <div className='font-bold text-gray-900 text-base md:text-lg'>Ravikumar Badami</div>
-                  <div className='text-xs md:text-sm text-gray-600'>Full Stack Developer</div>
-                </div>
-              </button>
-            </div>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className='group flex items-center gap-3'
+            >
+              <div className='w-10 h-10 accent-bg text-white rounded-lg flex items-center justify-center font-mono font-bold text-lg group-hover:scale-105 transition-transform'>
+                RB
+              </div>
+              <div className='hidden sm:block'>
+                <div className='font-bold text-gray-900 text-lg'>Ravikumar Badami</div>
+                <div className='text-sm text-gray-600'>Full Stack Developer</div>
+              </div>
+            </button>
 
             {/* Desktop Navigation */}
             <div className='hidden md:flex items-center space-x-1'>
               {navigationItems.map((item) => {
-                const IconComponent = item.icon;
                 const isActive = activeSection === item.id;
                 
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-xl font-medium transition-all duration-300 text-sm lg:text-base ${
+                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       isActive
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                        : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        ? 'accent-bg text-white'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                     }`}
-                    aria-label={`Go to ${item.label} section`}
                   >
-                    <IconComponent />
-                    <span>{item.label}</span>
+                    {item.label}
                   </button>
                 );
               })}
             </div>
 
             {/* CTA Button - Desktop */}
-            <div className='hidden md:flex items-center gap-4'>
+            <div className='hidden md:block'>
               <a
                 href="mailto:ravikumar.badami@email.com"
-                className='bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm lg:text-base'
+                className='btn-primary'
               >
-                Hire Me
+                Let's Talk
               </a>
             </div>
 
@@ -121,16 +106,15 @@ const Header = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className='md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors'
-              aria-label="Toggle mobile menu"
             >
-              <div className='w-6 h-6 flex flex-col justify-center items-center'>
-                <span className={`block w-5 h-0.5 bg-gray-600 transition-all duration-300 ${
+              <div className='w-6 h-6 flex flex-col justify-center items-center space-y-1'>
+                <span className={`block w-5 h-0.5 bg-gray-700 transition-all duration-200 ${
                   isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
                 }`}></span>
-                <span className={`block w-5 h-0.5 bg-gray-600 mt-1 transition-all duration-300 ${
+                <span className={`block w-5 h-0.5 bg-gray-700 transition-all duration-200 ${
                   isMobileMenuOpen ? 'opacity-0' : ''
                 }`}></span>
-                <span className={`block w-5 h-0.5 bg-gray-600 mt-1 transition-all duration-300 ${
+                <span className={`block w-5 h-0.5 bg-gray-700 transition-all duration-200 ${
                   isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''
                 }`}></span>
               </div>
@@ -138,41 +122,38 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? 'max-h-96 pb-6' : 'max-h-0'
-          }`}>
-            <div className='space-y-2 pt-4 border-t border-gray-200'>
-              {navigationItems.map((item) => {
-                const IconComponent = item.icon;
-                const isActive = activeSection === item.id;
+          {isMobileMenuOpen && (
+            <div className='md:hidden border-t border-gray-200 bg-white'>
+              <div className='py-4 space-y-2'>
+                {navigationItems.map((item) => {
+                  const isActive = activeSection === item.id;
+                  
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                        isActive
+                          ? 'accent-bg text-white'
+                          : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
                 
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
-                      isActive
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
+                <div className='pt-4 border-t border-gray-200'>
+                  <a
+                    href="mailto:ravikumar.badami@email.com"
+                    className='btn-primary w-full justify-center'
                   >
-                    <IconComponent />
-                    <span>{item.label}</span>
-                  </button>
-                );
-              })}
-              
-              {/* Mobile CTA */}
-              <div className='pt-4 border-t border-gray-200'>
-                <a
-                  href="mailto:ravikumar.badami@email.com"
-                  className='w-full block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold'
-                >
-                  Hire Me
-                </a>
+                    Let's Talk
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </nav>
       </header>
       

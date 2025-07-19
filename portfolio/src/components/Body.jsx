@@ -7,19 +7,25 @@ import About from './About/Index';
 
 const Body = () => {
   return (
-    <div className='flex flex-col items-center overflow-x-hidden min-h-screen bg-gradient-to-b from-gray-50 to-white w-full'>
+    <div className='min-h-screen bg-white'>
       <Header />
-      <main className='w-full'>
+      <main>
         <Hero />
         <About />
         <Skills />
         <Project />
         <Contact />
       </main>
-      <footer className='w-full bg-gray-900 text-white text-center py-8 mt-20'>
-        <div className='px-4 sm:px-6 lg:px-8'>
-          <p>&copy; 2024 Ravikumar Badami. All rights reserved.</p>
-          <p className='text-sm text-gray-400 mt-2'>Built with React, Vite & Tailwind CSS</p>
+      <footer className='bg-gray-900 text-white text-center section-padding'>
+        <div className='container'>
+          <div className='border-t border-gray-700 pt-8'>
+            <p className='text-body text-gray-300'>
+              &copy; 2024 Ravikumar Badami. All rights reserved.
+            </p>
+            <p className='text-sm text-gray-400 mt-2 font-mono'>
+              Crafted with precision and passion
+            </p>
+          </div>
         </div>
       </footer>
     </div>
