@@ -1,57 +1,102 @@
-import SocialMedia from './SocialMedia';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { contactData } from '../../utils/content'; // Importing for email address display if needed
 
 const Contact = () => {
+  const form = useRef();
+  const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
+    // Sign up at https://www.emailjs.com/
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+          setStatus('success');
+          form.current.reset();
+          // Reset status after 5 seconds
+          setTimeout(() => setStatus(''), 5000);
+      }, (error) => {
+          console.log(error.text);
+          setStatus('error');
+      });
+  };
+
   return (
-    <div id='messages'>
-      <section className='text-gray-600 body-font relative bg-blue-100 rounded-xl '>
-        <SocialMedia />
-        <div className=' px-5 py-10 md:py-10 mx-auto'>
-          <div className='flex flex-col text-center w-full mb-6 md:mb-12'>
-            <h1 className='text-3xl md:text-6xl  title-font font-extrabold mb-4 text-gray-900'>
-              Lets connect
-            </h1>
-          </div>
-          <div className='lg:w-1/2 md:w-2/3 mx-auto'>
-            <div className='flex flex-wrap -m-2'>
-              <div className='p-2 w-1/2'>
-                <div className='relative'>
-                  <label className='leading-7 text-sm font-medium text-black'>Name</label>
-                  <input
-                    type='text'
-                    className='w-full bg-gray-100 bg-opacity-50 rounded border  border-black focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
-                  />
-                </div>
+    <section id="contact" className="py-24 bg-white relative">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-zinc-900 mb-4 font-display">
+            Get in Touch
+          </h2>
+          <p className="text-zinc-600">
+            Have a project in mind or just want to say hi? I'd love to hear from you.
+          </p>
+        </div>
+
+        <div className="bg-zinc-50 rounded-3xl p-8 md:p-10 border border-zinc-200">
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="user_name" className="text-sm font-medium text-zinc-700">Name</label>
+                <input 
+                  type="text" 
+                  name="user_name" // Name attribute required for EmailJS
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all"
+                  placeholder="John Doe"
+                />
               </div>
-              <div className='p-2 w-1/2'>
-                <div className='relative'>
-                  <label className='leading-7 text-sm font-medium text-black'>Email</label>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    className='w-full bg-gray-100 bg-opacity-50 rounded border border-black focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
-                  />
-                </div>
-              </div>
-              <div className='p-2 w-full'>
-                <div className='relative'>
-                  <label className='leading-7 text-sm font-medium text-black'>Message</label>
-                  <textarea
-                    id='message'
-                    name='message'
-                    className='w-full min-h-44 bg-gray-100 bg-opacity-50 rounded border border-black focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-auto text-base outline-none text-gray-700 py-1 px-3 leading-6 transition-colors duration-200 ease-in-out resize-both'></textarea>
-                </div>
-              </div>
-              <div className='p-2 w-full'>
-                <button className='flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg'>
-                  Button
-                </button>
+              <div className="space-y-2">
+                <label htmlFor="user_email" className="text-sm font-medium text-zinc-700">Email</label>
+                <input 
+                  type="email" 
+                  name="user_email" // Name attribute required for EmailJS
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all"
+                  placeholder="john@example.com"
+                />
               </div>
             </div>
-          </div>
+            
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm font-medium text-zinc-700">Message</label>
+              <textarea 
+                name="message" // Name attribute required for EmailJS
+                rows="4"
+                required
+                className="w-full px-4 py-3 rounded-xl bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              disabled={status === 'sending'}
+              className="w-full py-4 bg-zinc-900 text-white rounded-xl font-bold text-lg hover:bg-zinc-800 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
+            </button>
+
+            {/* Status Feedback */}
+            {status === 'success' && (
+              <p className="text-center text-green-600 font-medium">Message sent successfully!</p>
+            )}
+            {status === 'error' && (
+              <p className="text-center text-red-600 font-medium">Failed to send message. Please try again.</p>
+            )}
+
+          </form>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

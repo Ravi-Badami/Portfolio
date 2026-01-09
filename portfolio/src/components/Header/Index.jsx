@@ -1,36 +1,29 @@
+import React from 'react';
 import HomeIcon from './components/HomeIcon';
-import Message from './components/Message';
-import Settings from './components/Settings';
+import ExperienceIcon from './components/ExperienceIcon';
 import User from './components/User';
+import Settings from './components/Settings';
+import Message from './components/Message';
 
 const Header = () => {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    console.log(section);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start', // You can adjust this based on your preference
-      });
-    }
-  };
   return (
-    <div className='text-red-500 fixed z-50'>
-      <div className='flex flex-col items-center  w-screen'>
-        <div className='border border-gray-300 py-3 bg-opacity-80 backdrop-filter backdrop-blur-lg md:w-2/3 flex justify-between gap-1 shadow-xl rounded-md'>
-          {/* <HomeIcon /> */}
-          <div onClick={() => scrollToSection('messages')}>
-            <Message />
-          </div>
-          <div onClick={() => scrollToSection('about')}>
-            <User />
-          </div>
-          <div onClick={() => scrollToSection('project')}>
-            <Settings />
-          </div>
-        </div>
-      </div>
-    </div>
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 bg-white/70 backdrop-blur-2xl border border-white/50 shadow-2xl rounded-full px-6 py-4 flex items-center gap-6 md:gap-8 z-50 ring-1 ring-zinc-900/5 transition-transform duration-300 hover:translate-y-1">
+      <a href="#about" className="text-zinc-500 hover:text-red-600 p-2 hover:bg-zinc-100 rounded-2xl transition-transform duration-300 hover:scale-110" aria-label="Home">
+        <HomeIcon />
+      </a>
+      <a href="#skills" className="text-zinc-500 hover:text-red-600 p-2 hover:bg-zinc-100 rounded-2xl transition-transform duration-300 hover:scale-110" aria-label="Skills">
+        <User />
+      </a>
+      <a href="#experience" className="text-zinc-500 hover:text-red-600 p-2 hover:bg-zinc-100 rounded-2xl transition-transform duration-300 hover:scale-110" aria-label="Experience">
+        <ExperienceIcon />
+      </a>
+      <a href="#project" className="text-zinc-500 hover:text-red-600 p-2 hover:bg-zinc-100 rounded-2xl transition-transform duration-300 hover:scale-110" aria-label="Projects">
+        <Settings />
+      </a>
+      <a href="#contact" className="text-zinc-500 hover:text-red-600 p-2 hover:bg-zinc-100 rounded-2xl transition-transform duration-300 hover:scale-110" aria-label="Contact">
+        <Message />
+      </a>
+    </nav>
   );
 };
 

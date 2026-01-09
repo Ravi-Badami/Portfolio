@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+body {
+  @apply bg-zinc-50 text-zinc-900 font-sans selection:bg-teal-100 selection:text-teal-900;
+  /* CSS Dot Grid Pattern - High Perf */
+  background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+/* Mesh Gradient Blobs - CSS Only */
+.bg-mesh-blur {
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(168,76%,36%,0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(200,80%,50%,0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(330,80%,50%,0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(260,80%,50%,0.05) 0px, transparent 50%);
+  @apply absolute inset-0 -z-10 pointer-events-none;
+}
+
+/* Utilities for Glassmorphism */
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600;
 }
