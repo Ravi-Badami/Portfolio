@@ -34,7 +34,8 @@ export const skillsData = [
     skills: [
       { name: "Git" },
       { name: "Docker" },
-      { name: "Figma" }
+      { name: "Figma" },
+      { name: "Vercel" }
     ]
   }
 ];
@@ -42,27 +43,26 @@ export const skillsData = [
 // Experience Data
 export const experienceData = [
   {
-    title: "Full Stack Engineer",
-    company: "LumiEther Research",
-    date: "Nov 2023 - Present",
+    title: "Founding Engineer (Stealth Mode Startup / Core Project)",
+    company: "Lumiether Research LLP (Full-Time)",
+    date: "Nov 2025 - Present",
     description: [
-      "Architected and developed a scalable rider management system, supporting 1000+ daily active users.",
-      "Built a high-performance cross-platform mobile app using Flutter, reducing development time by 30%.",
-      "Designed and implemented RESTful APIs using Node.js and PostgreSQL to handle real-time location data.",
-      "Optimized admin dashboard performance by implementing virtualization for large datasets."
+      "Architected high-concurrency, event-driven ecosystem using Flutter and Quarkus to handle complex distributed Nanoservice transactions.",
+      "Engineered resilient backend with CQRS and JWT; established Docker workflows for consistent, secure deployment environments.",
+      "Developing real-time mapping, camera integration, and secure RBAC admin dashboards to optimize UI/UX."
     ],
-    tech: ["React", "Flutter", "Node.js", "PostgreSQL", "Go", "Docker"]
+    tech: ["Flutter", "Quarkus", "CQRS", "JWT", "Docker", "RBAC"]
   },
   {
-    title: "Software Developer Intern",
-    company: "LumiEther Research",
-    date: "May 2023 - Oct 2023",
+    title: "Software Engineering Intern",
+    company: "Lumiether Research LLP (Internship)",
+    date: "Feb 2025 - Oct 2025",
     description: [
-      "Collaborated with the senior engineering team to rebuild the core landing page using React and Tailwind CSS.",
-      "Implemented a new authentication flow using JWT, improving security and user session management.",
-      "Developed reusable UI components for the design system, ensuring consistency across all web products."
+      "Co-developed distributed Flutter and Quarkus system components used by [Number] users.",
+      "Designed modular widgets to decouple UI logic, reducing code redundancy and improving rendering times.",
+      "Built validated RESTful APIs to ensure seamless data synchronization between microservices and frontend."
     ],
-    tech: ["React", "Tailwind CSS", "JavaScript", "Figma"]
+    tech: ["Flutter", "Quarkus", "REST API", "Widget Design"]
   }
 ];
 
@@ -71,9 +71,17 @@ export const experienceData = [
 // Restored "TajBite" and "Netflix GPT" as per user request.
 export const projectsData = [
   {
+    title: "AgroScan",
+    description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
+    tags: ["Flutter", "Python", "MobileNetV2", "Next.js", "Tailwind CSS"],
+    image: null,
+    link: null,
+    github: "https://github.com/Ravi-Badami"
+  },
+  {
     title: "Chromadec",
-    description: "A premium landing page for an art commission agency. Features a dark luxury aesthetic, mobile-responsive layout, and high-performance animations.",
-    tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
+    tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
     image: null,
     link: "https://www.chromadec.com/",
     github: null

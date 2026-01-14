@@ -1,6 +1,6 @@
 const Settings = () => {
   return (
-    <div className='group relative px-4 cursor-pointer'>
+    <div className='group relative px-1 md:px-4 cursor-pointer'>
       <div className='flex h-10 w-10 items-center justify-center rounded-full hover:text-blue-500'>
         <svg
           width='256px'

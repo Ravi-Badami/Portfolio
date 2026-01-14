@@ -10,9 +10,10 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-xl font-bold text-zinc-900 mb-2 group-hover:text-teal-600 transition-colors">
           {project.title}
         </h3>
-        <p className="text-zinc-600 text-sm leading-relaxed mb-6 flex-1">
-          {project.description}
-        </p>
+        <p 
+          className="text-zinc-600 text-sm leading-relaxed mb-6 flex-1"
+          dangerouslySetInnerHTML={{ __html: project.description }}
+        />
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
