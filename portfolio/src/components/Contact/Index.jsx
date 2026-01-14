@@ -6,15 +6,20 @@ const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
 
-  const sendEmail = (e) => {
+    const sendEmail = (e) => {
     e.preventDefault();
     setStatus('sending');
 
-    // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
-    // Sign up at https://www.emailjs.com/
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY || SERVICE_ID === 'your_service_id_here') {
+      console.error('EmailJS credentials are missing. Please check your .env file.');
+      setStatus('error');
+      alert('Email service is not configured. Please check the console for details.');
+      return;
+    }
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then((result) => {
