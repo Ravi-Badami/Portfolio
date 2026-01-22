@@ -71,14 +71,6 @@ export const experienceData = [
 // Restored "TajBite" and "Netflix GPT" as per user request.
 export const projectsData = [
   {
-    title: "AgroScan",
-    description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
-    tags: ["Flutter", "Python", "MobileNetV2", "Next.js", "Tailwind CSS"],
-    image: null,
-    link: null,
-    github: "https://github.com/Ravi-Badami"
-  },
-  {
     title: "Chromadec",
     description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
@@ -89,7 +81,7 @@ export const projectsData = [
   {
     title: "TajBite",
     description: "A comprehensive food ordering solution built for restaurant operations. Features real-time menu synchronization, efficient cart management, and a polished user interface for seamless digital dining experiences.",
-    tags: ["React", "Redux Toolkit", "Tailwind CSS", "Jest"],
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "Tailwind CSS", "Jest"],
     image: null, 
     link: "https://tajbite.vercel.app/",
     github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
@@ -102,13 +94,21 @@ export const projectsData = [
     link: "https://netflixgptpro.vercel.app/",
     github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
   },
-  
+  {
+    title: "AgroScan",
+    description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
+    tags: ["Flutter", "Python", "MobileNetV2", "Next.js", "Tailwind CSS"],
+    image: null,
+    link: null,
+    github: "https://github.com/Ravi-Badami"
+  }
 ];
 
 // Contact Data
 export const contactData = {
   email: "ravikumarbadami13@gmail.com", // Replace with real email if available
   github: "https://github.com/Ravi-Badami",
-  linkedin: "https://linkedin.com/in/ravikumar-badami",
-  twitter: "https://twitter.com/ravikumar_badami"
+  linkedin: "https://www.linkedin.com/in/ravikumar-badami-8bb012202/",
+  twitter: "https://x.com/RaviBadamipvt",
+  hashnode: "https://ravibadami.hashnode.dev/"
 };

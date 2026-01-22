@@ -6,12 +6,16 @@ const Projects = () => {
   return (
     <section id="project" className="py-24 bg-zinc-50">
        <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6 font-display tracking-tight">
-            Things I've Built
+        <div className="mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold uppercase tracking-wider mb-6 border border-zinc-200">
+            <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
+            Selected Implementations
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black text-zinc-900 mb-6 font-display tracking-tight leading-tight">
+            Things I've Built.
           </h2>
-          <p className="text-xl text-zinc-600 max-w-2xl">
-            A collection of projects attempting to solve real-world problems.
+          <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+            A curated showcase of applications solving real-world challenges.
           </p>
         </div>
 
