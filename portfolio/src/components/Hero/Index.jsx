@@ -118,7 +118,7 @@ const Hero = () => {
           <span className="text-zinc-400 font-mono text-sm uppercase tracking-wider mb-6 block relative z-10">The Stack</span>
           
           <div className="flex flex-wrap gap-3 relative z-10">
-             {['JavaScript', 'React', 'Flutter', 'Node.js', 'Express.js', 'Tailwind CSS', 'MongoDB', 'Quarkus', 'Supabase'].map((tech) => (
+             {['JavaScript', 'React', 'Flutter', 'Node.js', 'Express.js', 'Tailwind CSS', 'MongoDB', 'Java/Quarkus', 'Supabase'].map((tech) => (
                 <div key={tech} className="bg-white px-5 py-3 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all duration-300 cursor-default">
                   <span className="font-semibold text-zinc-700">{tech}</span>
                 </div>

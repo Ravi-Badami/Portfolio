@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
 
         {/* Tech Stack - Moved Above Buttons */}
         <div className="mb-8">
-           <span className="block text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">Core Technology</span>
+           <span className="block text-xs font-bold text-black uppercase tracking-wider mb-3">Core Technology</span>
            <div className="flex flex-wrap gap-2">
             {project.tags.map((tag, idx) => (
               <span 

@@ -26,7 +26,7 @@ export const skillsData = [
       { name: "Express" },
       { name: "MongoDB" },
       { name: "Redis" },
-      { name: "Quarkus" }
+      { name: "Java/Quarkus" }
     ]
   },
   {
