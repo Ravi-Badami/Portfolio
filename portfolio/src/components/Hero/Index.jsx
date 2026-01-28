@@ -60,6 +60,20 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col gap-4">
+               {/* Resume Button */}
+               <a 
+                href={contactData.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 p-3 bg-white text-zinc-900 rounded-xl font-medium hover:bg-zinc-200 transition-colors w-full"
+               >
+                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                 </svg>
+                 <span>View Resume</span>
+               </a>
+
                {/* Social Icons Row */}
               <div className="flex flex-wrap gap-3">
                 <a href={heroData.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-800 rounded-lg text-white hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-zinc-600" aria-label="GitHub">
@@ -72,7 +86,9 @@ const Hero = () => {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
                 </a>
                 <a href={contactData.hashnode} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-800 rounded-lg text-white hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-zinc-600" aria-label="Hashnode">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M22.351 8.019l-6.37-6.37a5.63 5.63 0 0 0-7.962 0l-6.37 6.37a5.63 5.63 0 0 0 0 7.962l6.37 6.37a5.63 5.63 0 0 0 7.962 0l6.37-6.37a5.63 5.63 0 0 0 0-7.962zM12 15.953a3.953 3.953 0 1 1 0-7.906 3.953 3.953 0 0 1 0 7.906z" />
+                  </svg>
                 </a>
               </div>
               

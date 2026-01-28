@@ -1,34 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../../utils/content';
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState('All');
+  const tabs = ['All', 'Fullstack', 'Frontend', 'Backend'];
+
+  const filteredProjects = activeTab === 'All' 
+    ? projectsData 
+    : projectsData.filter(project => project.category === activeTab);
+
   return (
-    <section id="project" className="py-24 bg-zinc-50">
-       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold uppercase tracking-wider mb-6 border border-zinc-200">
-            <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
-            Selected Implementations
+    <section id="project" className="py-24 bg-zinc-50 relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-zinc-200/50 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-1/2 -left-24 w-72 h-72 bg-zinc-200/30 rounded-full blur-3xl opacity-50"></div>
+      </div>
+
+       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold uppercase tracking-wider border border-zinc-200">
+              <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
+              Selected Implementations
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-zinc-900 font-display tracking-tight leading-tight">
+              Projects.
+            </h2>
+            <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+              A curated showcase of applications solving real-world challenges.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-zinc-900 mb-6 font-display tracking-tight leading-tight">
-            Things I've Built.
-          </h2>
-          <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            A curated showcase of applications solving real-world challenges.
-          </p>
+
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap gap-2 bg-white p-1.5 rounded-xl border border-zinc-200 shadow-sm">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  activeTab === tab 
+                    ? 'bg-zinc-900 text-white shadow-md' 
+                    : 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-             // Assuming ProjectCard needs restoration or exists. Based on checking verify first.
-             // If ProjectCard is missing, this Index will fail too. 
-             // I'll create a simple inline card map for safety if I can't verify ProjectCard exists.
-             // But for now, let's assume I restore ProjectCard next if needed.
-             // Actually, to be safe, I should verify ProjectCard existence or inline the card logic temporarily.
-             // I'll assume ProjectCard is missing too, so I'll create it in next step.
-             <ProjectCard key={index} project={project} />
-          ))}
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))
+          ) : (
+             <div className="col-span-full py-20 text-center">
+                <div className="inline-block p-4 rounded-full bg-zinc-100 mb-4">
+                  <svg className="w-8 h-8 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium text-zinc-900">No projects found</h3>
+                <p className="text-zinc-500">No projects listed in this category yet.</p>
+             </div>
+          )}
         </div>
       </div>
     </section>

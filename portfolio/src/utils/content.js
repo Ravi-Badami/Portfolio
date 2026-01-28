@@ -71,9 +71,10 @@ export const experienceData = [
 // Restored "TajBite" and "Netflix GPT" as per user request.
 export const projectsData = [
   {
-    title: "Chromadec",
+    title: "chromadec.com",
     description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
+    category: "Fullstack",
     image: null,
     link: "https://www.chromadec.com/",
     github: null
@@ -82,25 +83,46 @@ export const projectsData = [
     title: "TajBite",
     description: "A comprehensive food ordering solution built for restaurant operations. Features real-time menu synchronization, efficient cart management, and a polished user interface for seamless digital dining experiences.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "Tailwind CSS", "Jest"],
+    category: "Frontend",
     image: null, 
     link: "https://tajbite.vercel.app/",
     github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
   },
   {
-    title: "Netflix GPT",
-    description: "An AI-powered movie recommendation platform integrating OpenAI's GPT API. Features multi-language support, TMDB integration, and a responsive streaming-style UI.",
-    tags: ["React", "OpenAI API", "Firebase", "Redux"],
+    title: "feelflixpro.vercel.app",
+    description: "An AI-powered movie recommendation platform integrating Google's Gemini API. Features multi-language support, TMDB integration, and a responsive streaming-style UI.",
+    tags: ["React", "Gemini API", "Firebase", "Redux"],
+    category: "Frontend",
     image: null,
-    link: "https://netflixgptpro.vercel.app/",
+    link: "https://feelflixpro.vercel.app/",
     github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
   },
   {
     title: "AgroScan",
     description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
     tags: ["Flutter", "Python", "MobileNetV2", "Next.js", "Tailwind CSS"],
+    category: "Fullstack",
     image: null,
     link: null,
     github: "https://github.com/Ravi-Badami"
+  },
+  {
+    title: "Tajbite Backend",
+    description: "A robust RESTful API for a food ordering platform, featuring efficient dish management, search, and filtering. Built with a modular architecture using Node.js and MongoDB to ensure scalability and performance.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Swagger"],
+    category: "Backend",
+    image: null, 
+    link: null,
+    github: "https://github.com/Ravi-Badami/Tajbite-backend"
+  },
+  {
+    title: "Identity Service",
+    description: "Enterprise-grade Node.js microservice demonstrating strict layered architecture. Features hybrid pagination (Cursor+Offset), database circuit breaking, duplicate request prevention, and ESR pattern indexing for optimized performance.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Zod", "Bcrypt", "Resilience Patterns"],
+    category: "Backend",
+    image: null,
+    link: null,
+    github: "https://github.com/Ravi-Badami/identity-service"
   }
 ];
 
@@ -110,5 +132,6 @@ export const contactData = {
   github: "https://github.com/Ravi-Badami",
   linkedin: "https://www.linkedin.com/in/ravikumar-badami-8bb012202/",
   twitter: "https://x.com/RaviBadamipvt",
-  hashnode: "https://ravibadami.hashnode.dev/"
+  hashnode: "https://ravibadami.hashnode.dev/",
+  resume: "https://drive.google.com/file/d/1fvVs9qrB3u_nEAfboX-zUmhOg9HGqnUZ/view?usp=sharing"
 };
