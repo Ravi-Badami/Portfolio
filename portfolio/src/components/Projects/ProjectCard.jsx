@@ -5,25 +5,25 @@ const ProjectCard = ({ project }) => {
     <div className="group relative flex flex-col h-full bg-white rounded-3xl transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-200/50 hover:-translate-y-1 overflow-hidden border border-zinc-200 hover:border-zinc-300">
       
       {/* Content Container */}
-      <div className="relative p-8 flex flex-col flex-1 z-10">
+      <div className="relative p-5 md:p-8 flex flex-col flex-1 z-10">
         
         {/* Title & Description */}
-        <h3 className="text-2xl font-bold text-zinc-900 mb-3 group-hover:underline decoration-zinc-400 underline-offset-4 decoration-2">
+        <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-3 group-hover:underline decoration-zinc-400 underline-offset-4 decoration-2">
           {project.title}
         </h3>
         <p 
-          className="text-zinc-500 text-sm leading-relaxed mb-6"
+          className="text-zinc-500 text-sm leading-relaxed mb-6 block"
           dangerouslySetInnerHTML={{ __html: project.description }}
         />
 
         {/* Tech Stack - Moved Above Buttons */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
            <span className="block text-xs font-bold text-black uppercase tracking-wider mb-3">Core Technology</span>
            <div className="flex flex-wrap gap-2">
             {project.tags.map((tag, idx) => (
               <span 
                 key={idx} 
-                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-50 text-zinc-600 border border-zinc-200 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-all duration-300 cursor-default"
+                className="inline-flex items-center px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg text-[10px] md:text-xs font-medium bg-zinc-50 text-zinc-600 border border-zinc-200 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-all duration-300 cursor-default"
               >
                 {tag}
               </span>
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Action Buttons - Pushed to Bottom */}
-        <div className="flex gap-3 mt-auto">
+        <div className="flex flex-col sm:flex-row gap-3 mt-auto">
            {project.link && (
             <a 
               href={project.link} 

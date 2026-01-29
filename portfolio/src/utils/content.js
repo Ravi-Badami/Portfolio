@@ -89,7 +89,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
   },
   {
-    title: "feelflixpro.vercel.app",
+    title: "FeelFlixPro",
     description: "An AI-powered movie recommendation platform integrating Google's Gemini API. Features multi-language support, TMDB integration, and a responsive streaming-style UI.",
     tags: ["React", "Gemini API", "Firebase", "Redux"],
     category: "Frontend",
