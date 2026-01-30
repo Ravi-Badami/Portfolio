@@ -123,6 +123,15 @@ export const projectsData = [
     image: null,
     link: null,
     github: "https://github.com/Ravi-Badami/identity-service"
+  },
+  {
+    title: "AgroScan App",
+    description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
+    tags: ["Flutter", "MobileNetV2"],
+    category: "Application",
+    image: null,
+    link: null,
+    github: "https://github.com/Ravi-Badami"
   }
 ];
 
