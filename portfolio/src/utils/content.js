@@ -109,7 +109,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami"
   },
   {
-    title: "TajbiteBackend",
+    title: "Tajbite Backend",
     description: "A robust RESTful API for a food ordering platform, featuring efficient dish management, search, and filtering. Built with a modular architecture using Node.js and MongoDB to ensure scalability and performance.",
     tags: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Swagger"],
     category: "Backend",
@@ -118,7 +118,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami/Tajbite-backend"
   },
   {
-    title: "IdentityService",
+    title: "Identity Service",
     description: "Enterprise-grade Node.js microservice demonstrating strict layered architecture. Features hybrid pagination (Cursor+Offset), database circuit breaking, duplicate request prevention, and ESR pattern indexing for optimized performance.",
     tags: ["Node.js", "Express.js", "MongoDB", "Zod", "Bcrypt", "Resilience Patterns"],
     category: "Backend",
