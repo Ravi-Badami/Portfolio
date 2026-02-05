@@ -35,7 +35,9 @@ export const skillsData = [
       { name: "Git" },
       { name: "Docker" },
       { name: "Figma" },
-      { name: "Vercel" }
+      { name: "Vercel" },
+      { name: "Context Engineering" },
+      { name: "Prompt Engineering" }
     ]
   }
 ];
@@ -43,8 +45,8 @@ export const skillsData = [
 // Experience Data
 export const experienceData = [
   {
-    title: "Founding Engineer (Stealth Mode Startup / Core Project)",
-    company: "Lumiether Research LLP (Full-Time)",
+    title: "Founding Engineer | Stealth Mode",
+    company: "Lumiether Research LLP",
     date: "Nov 2025 - Present",
     description: [
       "Architected high-concurrency, event-driven ecosystem using Flutter and Quarkus to handle complex distributed Nanoservice transactions.",
@@ -71,7 +73,7 @@ export const experienceData = [
 // Restored "TajBite" and "Netflix GPT" as per user request.
 export const projectsData = [
   {
-    title: "chromadec.com",
+    title: "ChromadecCom",
     description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
     category: "Fullstack",
@@ -107,7 +109,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami"
   },
   {
-    title: "Tajbite Backend",
+    title: "TajbiteBackend",
     description: "A robust RESTful API for a food ordering platform, featuring efficient dish management, search, and filtering. Built with a modular architecture using Node.js and MongoDB to ensure scalability and performance.",
     tags: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Swagger"],
     category: "Backend",
@@ -116,7 +118,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami/Tajbite-backend"
   },
   {
-    title: "Identity Service",
+    title: "IdentityService",
     description: "Enterprise-grade Node.js microservice demonstrating strict layered architecture. Features hybrid pagination (Cursor+Offset), database circuit breaking, duplicate request prevention, and ESR pattern indexing for optimized performance.",
     tags: ["Node.js", "Express.js", "MongoDB", "Zod", "Bcrypt", "Resilience Patterns"],
     category: "Backend",
@@ -125,7 +127,7 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami/identity-service"
   },
   {
-    title: "AgroScan App",
+    title: "AgroScanApp",
     description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
     tags: ["Flutter", "MobileNetV2"],
     category: "Application",

@@ -1,37 +1,25 @@
 import React from 'react';
-import ExperienceCard from './ExperienceCard';
 import { experienceData } from '../../utils/content';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 bg-zinc-50 relative overflow-hidden">
-      {/* Background Decor - clean usage of existing global styles */}
-      <div className="absolute inset-0 bg-grid-zinc-200/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
-
-      <div className="max-w-4xl mx-auto px-6 relative">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6 font-display tracking-tight">
-            Work Experience
-          </h2>
-          <p className="text-xl text-zinc-600 max-w-2xl">
-            My professional journey in building scalable production software.
-          </p>
-        </div>
-
-        <div className="relative">
-           {/* Timeline Container - Left Aligned */}
-          <div className="flex flex-col space-y-0"> 
-            {experienceData.map((exp, index) => (
-              <ExperienceCard 
-                key={index} 
-                experience={exp} 
-              />
-            ))}
+    <section id="experience" className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 lg:px-12">
+      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-6">Work Experience</h2>
+      
+      <div className="space-y-3">
+        {experienceData.map((exp, index) => (
+          <div key={index} className="border-b border-zinc-200 pb-3">
+            <div className="flex flex-wrap items-baseline gap-2">
+              <h3 className="text-lg font-semibold text-zinc-900">{exp.title}</h3>
+              <span className="text-sm text-zinc-600">@ {exp.company}</span>
+              <span className="text-sm text-zinc-500">• {exp.date}</span>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 };
 
 export default Experience;
+

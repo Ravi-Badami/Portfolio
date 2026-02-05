@@ -16,21 +16,6 @@ const ProjectCard = ({ project }) => {
           dangerouslySetInnerHTML={{ __html: project.description }}
         />
 
-        {/* Tech Stack - Moved Above Buttons */}
-        <div className="mb-6 md:mb-8">
-           <span className="block text-xs font-bold text-black uppercase tracking-wider mb-3">Core Technology</span>
-           <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, idx) => (
-              <span 
-                key={idx} 
-                className="inline-flex items-center px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg text-[10px] md:text-xs font-medium bg-zinc-50 text-zinc-600 border border-zinc-200 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-all duration-300 cursor-default"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
         {/* Action Buttons - Pushed to Bottom */}
         <div className="flex flex-col sm:flex-row gap-3 mt-auto">
            {project.link && (
@@ -69,3 +54,4 @@ const ProjectCard = ({ project }) => {
 };
 
 export default ProjectCard;
+
