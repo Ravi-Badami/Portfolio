@@ -12,12 +12,12 @@ const Projects = () => {
       <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-3">Projects</h2>
 
       {/* Tab Navigation */}
-      <div className="flex gap-4 mb-3 border-b border-zinc-200">
+      <div className="flex gap-4 mb-1 border-b border-zinc-200">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`pb-2 px-4 font-medium transition-all ${
+            className={`pb-2 pr-4 font-medium transition-all ${
               activeTab === tab 
                 ? 'text-zinc-900 border-b-2 border-zinc-900' 
                 : 'text-zinc-600 hover:text-zinc-900'

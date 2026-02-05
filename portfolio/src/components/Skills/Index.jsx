@@ -4,7 +4,7 @@ import { skillsData } from '../../utils/content';
 const Skills = () => {
   return (
     <section id="skills" className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 lg:px-12">
-      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-6">Skills</h2>
+      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-1">Skills</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {skillsData.map((category, idx) => (

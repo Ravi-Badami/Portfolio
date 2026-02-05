@@ -73,7 +73,7 @@ export const experienceData = [
 // Restored "TajBite" and "Netflix GPT" as per user request.
 export const projectsData = [
   {
-    title: "ChromadecCom",
+    title: "Chromadec",
     description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
     tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
     category: "Fullstack",

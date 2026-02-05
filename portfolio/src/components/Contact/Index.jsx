@@ -12,7 +12,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 lg:px-12">
-      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-6">Available to Hire</h2>
+      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-1">Available to Hire</h2>
       
       <div className="md:max-w-md">
         <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">

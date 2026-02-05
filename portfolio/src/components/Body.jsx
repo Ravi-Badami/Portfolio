@@ -11,8 +11,11 @@ const Body = () => {
       <Hero />
       <Projects />
       <Experience />
-      <Skills />
-      <Contact />
+      {/* Skills and Available to Hire side by side on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <Skills />
+        <Contact />
+      </div>
     </div>
   );
 };
