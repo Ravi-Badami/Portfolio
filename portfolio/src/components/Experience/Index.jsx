@@ -4,7 +4,10 @@ import { experienceData } from '../../utils/content';
 const Experience = () => {
   return (
     <section id="experience" className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 lg:px-12">
-      <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-1">Work Experience</h2>
+      <div className="flex items-baseline gap-3 mb-1">
+        <h2 className="text-2xl md:text-4xl font-bold text-zinc-900">Work Experience</h2>
+        <span className="text-lg md:text-xl text-zinc-500 font-medium">11 Months</span>
+      </div>
       
       <div className="space-y-3">
         {experienceData.map((exp, index) => (

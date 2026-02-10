@@ -4,40 +4,74 @@ export const heroData = {
   intro: "Building digital products with purpose.",
   description: "I'm a Full Stack Engineer focused on scalable software, clean aesthetics, and exceptional user experiences.",
   status: "Available for Hire",
-  profileInitials: "RB"
+  profileInitials: "RB",
+  links: {
+    github: "https://github.com/Ravi-Badami",
+    linkedin: "https://www.linkedin.com/in/ravikumar-badami-8bb012202/",
+    twitter: "https://x.com/RaviBadamipvt",
+    email: "mailto:ravikumarbadami13@gmail.com"
+  }
 };
 
 // Skills Data
 export const skillsData = [
   {
-    category: "Frontend",
+    category: "Languages",
     skills: [
-      { name: "React" },
-      { name: "Tailwind CSS" },
+      { name: "Java" },
+      { name: "JavaScript" },
       { name: "TypeScript" },
-      { name: "Next.js" },
-      { name: "Flutter" }
+      { name: "Dart" },
+      { name: "Python" },
+      { name: "HTML/CSS" }
     ]
   },
   {
-    category: "Backend",
+    category: "Frontend & Mobile",
     skills: [
-      { name: "Node.js" },
-      { name: "Express" },
+      { name: "Flutter" },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "Tailwind CSS" },
+      { name: "Redux Toolkit" }
+    ]
+  },
+  {
+    category: "Backend & Database",
+    skills: [
+      { name: "Node.js (Express, NestJS)" },
+      { name: "FastAPI" },
       { name: "MongoDB" },
       { name: "Redis" },
+      { name: "Supabase" },
+      { name: "Zod" },
       { name: "Java/Quarkus" }
+    ]
+  },
+  {
+    category: "AI/ML",
+    skills: [
+      { name: "Google Gemini API" },
+      { name: "Pandas" },
+      { name: "OpenPyXL" }
     ]
   },
   {
     category: "Tools & DevOps",
     skills: [
-      { name: "Git" },
       { name: "Docker" },
+      { name: "Docker Compose" },
+      { name: "AWS (EC2)" },
+      { name: "Git/GitHub" },
+      { name: "Postman" },
       { name: "Figma" },
-      { name: "Vercel" },
-      { name: "Context Engineering" },
-      { name: "Prompt Engineering" }
+      { name: "Microservices" },
+      { name: "JWT" },
+      { name: "PM2" },
+      { name: "Swagger/OpenAPI" },
+      { name: "Jest" },
+      { name: "Supertest" },
+      { name: "Winston" }
     ]
   }
 ];
@@ -49,22 +83,24 @@ export const experienceData = [
     company: "Lumiether Research LLP",
     date: "Nov 2025 - Present",
     description: [
-      "Architected high-concurrency, event-driven ecosystem using Flutter and Quarkus to handle complex distributed Nanoservice transactions.",
-      "Engineered resilient backend with CQRS and JWT; established Docker workflows for consistent, secure deployment environments.",
-      "Developing real-time mapping, camera integration, and secure RBAC admin dashboards to optimize UI/UX."
+      "Developed scalable web applications using React.js with Redux Toolkit and offline-first Flutter mobile apps, integrating Hive local caching and optimizing GPS drift correction algorithms for core product IP.",
+      "Built high-performance microservices using Node.js and MongoDB, utilizing PM2 Clustering for zero-downtime and Redis for inter-service caching to significantly reduce database load.",
+      "Implemented enterprise-grade security using JWT with Refresh Token Rotation and Redis blacklisting, applying the CQRS pattern to separate read/write logic for optimized system performance.",
+      "Designed granular Role-Based Access Control (RBAC) and centralized observability using Winston and Morgan, ensuring secure and monitored communication between client and backend services.",
+      "Delivered secured REST APIs and analytics dashboards in an Agile environment, standardizing workflows with Docker containerization, Zod schema validation, and automated Postman testing."
     ],
-    tech: ["Flutter", "Quarkus", "CQRS", "JWT", "Docker", "RBAC"]
+    tech: ["React.js", "Redux Toolkit", "Flutter", "Node.js", "MongoDB", "Redis", "Docker", "AWS"]
   },
   {
     title: "Software Engineering Intern",
-    company: "Lumiether Research LLP (Internship)",
-    date: "Feb 2025 - Oct 2025",
+    company: "Lumiether Research LLP",
+    date: "Apr 2024 - Oct 2024",
     description: [
-      "Co-developed distributed Flutter and Quarkus system components used by [Number] users.",
-      "Designed modular widgets to decouple UI logic, reducing code redundancy and improving rendering times.",
-      "Built validated RESTful APIs to ensure seamless data synchronization between microservices and frontend."
+      "Developed responsive cross-platform mobile features using Flutter, integrating RESTful APIs to enable real-time data synchronization and seamless user interactions.",
+      "Engineered backend modules using Node.js, Express.js, and MongoDB, optimizing database schemas and API endpoints to support scalable MERN stack performance.",
+      "Executed Agile development workflows using Git/GitHub for version control (Feature Branching) and conducted rigorous API testing and validation using Postman."
     ],
-    tech: ["Flutter", "Quarkus", "REST API", "Widget Design"]
+    tech: ["Flutter", "Node.js", "Express.js", "MongoDB", "Git", "Postman"]
   }
 ];
 
@@ -74,39 +110,48 @@ export const experienceData = [
 export const projectsData = [
   {
     title: "Chromadec",
-    description: "A luxury art platform connecting clients and artists for custom commissions and ready-made sales. Specialized in high-end designs starting at ₹20,000, ensuring a premium experience with exclusive packaging and delivery.",
-    tags: ["Next.js", "TypeScript", "Drizzle ORM", "Supabase", "Redis", "Zustand", "Vercel"],
+    description: "Built a production-grade art marketplace with multi-role authentication (Admin, Artist, Client) and RBAC. Developed 20+ REST APIs using Drizzle ORM and Supabase to handle orders, commissions, and complex admin workflows. Implemented real-time dashboards using React Query and deployed on Vercel with optimized caching strategies.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Redis", "Tailwind CSS", "Zustand", "Drizzle ORM"],
     category: "Fullstack",
     image: null,
     link: "https://www.chromadec.com/",
     github: null
   },
   {
+    title: "InsightAI",
+    description: "Built an AI-powered business intelligence platform that analyzes multi-industry data (SaaS, E-commerce, Gaming, Services) and generates actionable insights using Google Gemini API. Built a dynamic template system for CSV, Excel, and JSON with industry-specific validation. Containerized a full-stack app with Docker Compose and deployed to AWS EC2.",
+    tags: ["React.js", "FastAPI", "Python", "Pandas", "Docker", "Google Gemini API", "AWS"],
+    category: "AI",
+    image: null,
+    link: null,
+    github: "https://github.com/Ravi-Badami/insight-ai"
+  },
+  {
     title: "TajBite",
-    description: "A comprehensive food ordering solution built for restaurant operations. Features real-time menu synchronization, efficient cart management, and a polished user interface for seamless digital dining experiences.",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "Tailwind CSS", "Jest"],
+    description: "Designed scalable MongoDB schemas and built RESTful APIs with advanced filtering, sorting, and search capabilities. Improved database performance by implementing indexing and query optimization, achieving 5–10x faster response times. Implemented autocomplete search functionality with debouncing.",
+    tags: ["React.js", "Express", "Node.js", "MongoDB", "Redux Toolkit", "Tailwind CSS"],
     category: "Frontend",
     image: null, 
     link: "https://tajbite.vercel.app/",
-    github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
+    github: "https://github.com/Ravi-Badami"
   },
   {
-    title: "FeelFlixPro",
-    description: "An AI-powered movie recommendation platform integrating Google's Gemini API. Features multi-language support, TMDB integration, and a responsive streaming-style UI.",
-    tags: ["React", "Gemini API", "Firebase", "Redux"],
-    category: "Frontend",
+    title: "NetflixGPT",
+    description: "Built an AI-powered movie recommendation platform integrating Google Gemini API and TMDB API. Implemented secure authentication via Firebase and managed global application state using Redux Toolkit. Designed a fully responsive UI with performance optimizations, including memoization and API response caching.",
+    tags: ["React.js", "Redux Toolkit", "Firebase", "Tailwind CSS", "Google Gemini API"],
+    category: "AI",
     image: null,
     link: "https://feelflixpro.vercel.app/",
-    github: "https://github.com/Ravi-Badami" // Placeholder, user to update specific repo
+    github: "https://github.com/Ravi-Badami"
   },
   {
     title: "AgroScan",
-    description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
-    tags: ["Flutter", "Python", "MobileNetV2", "Next.js", "Tailwind CSS"],
-    category: "Fullstack",
+    description: "Developed an AI-based plant disease detection system achieving 95%+ accuracy using the MobileNetV2 model. Built a Python Flask backend for image processing and prediction handling. Implemented user dashboards using Next.js and integrated Redis caching to reduce latency.",
+    tags: ["Flutter", "Next.js", "TypeScript", "Flask", "AI (MobileNetV2)"],
+    category: "AI",
     image: null,
     link: null,
-    github: "https://github.com/Ravi-Badami"
+    github: "https://github.com/Ravi-Badami/AgroScan"
   },
   {
     title: "Tajbite Backend",
@@ -118,23 +163,24 @@ export const projectsData = [
     github: "https://github.com/Ravi-Badami/Tajbite-backend"
   },
   {
-    title: "Identity Service",
-    description: "Enterprise-grade Node.js microservice demonstrating strict layered architecture. Features hybrid pagination (Cursor+Offset), database circuit breaking, duplicate request prevention, and ESR pattern indexing for optimized performance.",
-    tags: ["Node.js", "Express.js", "MongoDB", "Zod", "Bcrypt", "Resilience Patterns"],
+    title: "Enterprise Identity Service",
+    description: "Enterprise-grade Node.js microservice demonstrating strict layered architecture. Features hybrid pagination (Cursor+Offset), database circuit breaking, duplicate request prevention, and ESR pattern indexing for optimized performance. Includes comprehensive testing with Jest and Supertest, and centralized logging with Winston.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Zod", "Bcrypt", "Resilience Patterns", "Jest", "Supertest", "Winston"],
     category: "Backend",
     image: null,
     link: null,
-    github: "https://github.com/Ravi-Badami/identity-service"
+    github: "https://github.com/Ravi-Badami/Enterprise-Auth-Service"
   },
   {
     title: "AgroScanApp",
     description: "Developed both a comprehensive <strong>Mobile App</strong> and <strong>Website</strong> for AI-powered plant disease detection. Features real-time analysis using MobileNetV2 across both platforms.",
     tags: ["Flutter", "MobileNetV2"],
-    category: "Application",
+    category: "Mobile Application",
     image: null,
     link: null,
-    github: "https://github.com/Ravi-Badami"
-  }
+    github: "https://github.com/Ravi-Badami/Agroscan-App"
+  },
+
 ];
 
 // Contact Data

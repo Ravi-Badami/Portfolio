@@ -5,6 +5,7 @@ import Projects from './Projects/Index';
 import Skills from './Skills/Index';
 import Contact from './Contact/Index';
 
+
 const Body = () => {
   return (
     <div className="flex flex-col w-full bg-white">
@@ -16,6 +17,7 @@ const Body = () => {
         <Skills />
         <Contact />
       </div>
+
     </div>
   );
 };

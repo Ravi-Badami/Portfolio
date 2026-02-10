@@ -3,7 +3,7 @@ import { projectsData } from '../../utils/content';
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('Fullstack');
-  const tabs = ['Fullstack', 'Frontend', 'Backend'];
+  const tabs = ['Fullstack', 'Frontend', 'Backend', 'AI', 'Mobile Application'];
 
   const filteredProjects = projectsData.filter(project => project.category === activeTab);
 
